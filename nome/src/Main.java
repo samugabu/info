@@ -19,7 +19,7 @@ public class Main {
         System.out.println("Inserisci il cognome: ");
         String cognome1 = in.next();
 
-        System.out.println("Inserisci il provaider: ");
+        System.out.println("Inserisci il provider: ");
         String f1 = in.next();
 
         String mail = nome + cognome + f;
