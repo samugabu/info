@@ -1,3 +1,5 @@
+// 1 = casa, 2 = ospiti
+
 public class Tabellone {
     private String casa;
     private String ospiti;
@@ -5,7 +7,7 @@ public class Tabellone {
     private int puntiOspiti;
     private int setCasa;
     private int setOspiti;
-    private int servizio; // 1 = casa, 2 = ospiti
+    private int servizio; 
     private int setInCorso;
 
     public Tabellone(String casa, String ospiti, int servizio) {
@@ -37,7 +39,7 @@ public class Tabellone {
 
     private void controllaFineSet() {
         if (puntiCasa >= 25 || puntiOspiti >= 25) {
-            if (Math.abs(puntiCasa - puntiOspiti) >= 2) {
+            if (puntiCasa - puntiOspiti >= 2 || puntiOspiti - punitCasa >= 2) {
                 if (puntiCasa > puntiOspiti)
                     setCasa++;
                 else
@@ -81,3 +83,4 @@ public class Tabellone {
 
     }
 }
+
