@@ -1,3 +1,5 @@
+// 0, 1, 2, 3, 4 (dove 4 è "vantaggio")
+
 public class TabelloneTennis {
     private String giocatore1;
     private String giocatore2;
@@ -8,7 +10,7 @@ public class TabelloneTennis {
     private int gameGiocatore1;
     private int gameGiocatore2;
 
-    private int puntiGiocatore1; // 0, 1, 2, 3, 4 (dove 4 è "vantaggio")
+    private int puntiGiocatore1; 
     private int puntiGiocatore2;
 
     private boolean vantaggioGiocatore1 = false;
@@ -47,7 +49,7 @@ public class TabelloneTennis {
             else tieBreakPunti2++;
 
             if (Math.max(tieBreakPunti1, tieBreakPunti2) >= 7 &&
-                    Math.abs(tieBreakPunti1 - tieBreakPunti2) >= 2) {
+                    tieBreakPunti1 - tieBreakPunti2 >= 2) {
                 if (tieBreakPunti1 > tieBreakPunti2) setGiocatore1++;
                 else setGiocatore2++;
                 resetGame();
@@ -103,7 +105,7 @@ public class TabelloneTennis {
         vantaggioGiocatore2 = false;
 
         if (Math.max(gameGiocatore1, gameGiocatore2) >= 6) {
-            if (Math.abs(gameGiocatore1 - gameGiocatore2) >= 2) {
+            if (gameGiocatore1 - gameGiocatore2 >= 2) {
                 if (gameGiocatore1 > gameGiocatore2) setGiocatore1++;
                 else setGiocatore2++;
                 resetGame();
@@ -135,8 +137,8 @@ public class TabelloneTennis {
     }
 
     private void controllaFinePartita() {
-        int setsToWin = tipoPartita / 2 + 1;
-        if (setGiocatore1 == setsToWin || setGiocatore2 == setsToWin) {
+        int ultimo = tipoPartita / 2 + 1;
+        if (setGiocatore1 == ultimo || setGiocatore2 == ultimo) {
             partitaTerminata = true;
         }
     }
@@ -196,4 +198,5 @@ public class TabelloneTennis {
                 linea2;
     }
 }
+
 
